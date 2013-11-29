@@ -6,6 +6,8 @@ gem 'rails', '3.2.14'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'property_uk_grabber', github:"ralphreid/property_uk_grabber"
+gem 'haml-rails'
 
 
 # Gems used only for assets and not required
