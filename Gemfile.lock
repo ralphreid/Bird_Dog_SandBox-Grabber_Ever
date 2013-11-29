@@ -37,6 +37,8 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.3)
     builder (3.0.4)
+    callsite (0.0.11)
+    coderay (1.1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -45,6 +47,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     erubis (2.7.0)
+    evernote-thrift (1.25.1)
     execjs (2.0.2)
     haml (4.0.4)
       tilt
@@ -63,15 +66,28 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta_request (0.2.8)
+      callsite
+      rack-contrib
+      railties
+    method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.5.2)
     multi_json (1.8.2)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     polyglot (0.3.3)
+    pry (0.9.12.4)
+      coderay (~> 1.0)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    pry-rails (0.3.2)
+      pry (>= 0.9.10)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
+    rack-contrib (1.1.0)
+      rack (>= 0.9.1)
     rack-ssl (1.3.3)
       rack
     rack-test (0.6.2)
@@ -99,6 +115,7 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    slop (3.4.7)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -120,9 +137,12 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  evernote-thrift
   haml-rails
   jquery-rails
+  meta_request
   property_uk_grabber!
+  pry-rails
   rails (= 3.2.14)
   sass-rails (~> 3.2.3)
   sqlite3

@@ -9,6 +9,15 @@ gem 'sqlite3'
 gem 'property_uk_grabber', github:"ralphreid/property_uk_grabber"
 gem 'haml-rails'
 
+gem 'evernote-thrift'
+# gem 'digest/md5'
+
+group :development, :test do
+  gem 'pry-rails'
+  # gem 'better_errors'
+  # gem 'binding_of_caller'
+  gem 'meta_request'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
