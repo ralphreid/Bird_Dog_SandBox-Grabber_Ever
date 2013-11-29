@@ -1,10 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @hello = "Ralph Mon"
-
-    url = "http://www.anscombes.co.uk/properties/highgate-property/conversion-4-bedroom-flat-apartment-for-sale/1364288/shepherds-hill-highgate-n6?area=n4+2lx&longitude=&latitude=&radius=5&saleType=Sale"
-    property = PropertyUkGrabber.get_property(url)
-    @price = property.price
+    
 
 
     authToken = ENV['EVERNOTE_DEV_TOKEN']
@@ -20,7 +16,11 @@ class HomeController < ApplicationController
     notebooks = noteStore.listNotebooks(authToken)
 
     notes = noteStore.findNotes(authToken, Evernote::EDAM::NoteStore::NoteFilter.new, nil, 100)
-    @list = notes.notes.map { |n| {:title => n.title, :url => n.attributes.sourceURL} }
+    @list = notes.notes.map { |n| {:title => n.title, :price => (PropertyUkGrabber.get_property(n.attributes.sourceURL)).price} }
+    
+    
+    # property = PropertyUkGrabber.get_property(url)
+    # @price = property.price
 
 
   end
